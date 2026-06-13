@@ -157,7 +157,7 @@ func (c *Client) getJSON(ctx context.Context, rawURL string, v any) error {
 
 // ListDocs returns all documentation sets available on DevDocs.io.
 func (c *Client) ListDocs(ctx context.Context) ([]DocSet, error) {
-	rawURL := c.baseURL + "/docs/index.json"
+	rawURL := c.baseURL + "/docs.json"
 	var wire []wireDocSet
 	if err := c.getJSON(ctx, rawURL, &wire); err != nil {
 		return nil, err
